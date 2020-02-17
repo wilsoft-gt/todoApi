@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+</head>
+<body>
+    {% if data %}
+        {% for dato in data %}
+            <hr>
+            <h1>{{dato.main_title}}</h1>
+            <p>{{dato.main_description}}</p>
+            <sub>{{dato.main_creation_date }} | {{dato.main_due_date}}</sub>
+            <ul>
+                {% for sub in dato.childItem_set.all %}
+                    <li>{{ sub.child_title }}: {{sub.child_description}} | ({{ sub.child_due_date }})</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

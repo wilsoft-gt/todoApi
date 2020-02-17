@@ -1,0 +1,26 @@
+nav {
+    height: 2em;
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    p {
+        margin: 0;
+        padding: 0.3em 1em;
+    }
+}
+
+
+ul {
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    float: right;
+    li {
+        padding: 0.3em 1em;
+        &:hover {
+            background-color: darken(#ccc, 10%);
+        }
+    }
+}
