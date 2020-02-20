@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+    $color1: rgba(2, 43, 58, 1);
+    $color2: rgba(31, 122, 140, 1);
+    $color3: rgba(191, 219, 247, 1);
+    $color4: rgba(225, 229, 242, 1);
+    $color5: rgba(255, 255, 255, 1);
+
+
 body {
     margin: 0;
     padding: 0;
     background-color: #eee;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

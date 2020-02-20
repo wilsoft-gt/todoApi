@@ -1,1 +1,30 @@
-<p>create-todo works!</p>
+<section class="formulario">
+    <mat-card class="card">
+        <mat-card-title>Add a new task</mat-card-title>
+        <mat-form-field apearence="fill">
+            <mat-label>Title</mat-label>
+            <input matInput [(ngModel)]="toSubmit.main_title" type="text" placeholder="Cook the cake">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Description</mat-label>
+            <textarea matInput [(ngModel)]="toSubmit.main_description" placeholder="I need to buy some powder and butter"></textarea>
+        </mat-form-field>
+        <div class="rowCont">
+            <mat-form-field>
+                <mat-label>Due date</mat-label>
+                <input matInput [(ngModel)]="date" [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+            <mat-label>Cathegory</mat-label>
+            <mat-select [(ngModel)]="toSubmit.main_cathegory">
+                <mat-option *ngFor="let category of cathegories" value="{{category.id}}">{{category.cathegory}}</mat-option>
+            </mat-select>
+            </mat-form-field>
+
+        </div>
+        <button mat-raised-button color="primary" (click)="createTodo()"><i class="fas fa-save"></i> save</button>
+    </mat-card>
+</section>

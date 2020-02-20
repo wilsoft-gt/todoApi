@@ -1,0 +1,23 @@
+/* * {
+    border: red 1px dotted;
+} */
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 3em;
+    .card {
+        display: flex;
+        flex-direction: column;
+            
+        .rowCont {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            mat-form-field {
+                width: 48.5%;
+            }
+        }
+    }
+}

@@ -1,1 +1,54 @@
-<p>detailed-todo works!</p>
+<section class="container">
+    <mat-card>
+        <mat-card class="card">
+            <mat-card-title>{{todoObj?.main_title}}</mat-card-title>
+            <mat-card-subtitle>Creation date: {{todoObj?.main_creation_date}} | Due date: {{todoObj?.main_due_date}}</mat-card-subtitle>
+            <mat-card-content>{{todoObj?.main_description}}</mat-card-content>
+            <mat-card-actions>
+
+
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <i class="fas fa-plus-square"></i>
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        Add a new sub task
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                  
+                      
+                    <div class="formContainer">
+                        <mat-form-field>
+                            <input matInput type="text" placeholder="Please enter the title" [(ngModel)]="toSubmit.child_title">
+                        </mat-form-field>
+                        <mat-form-field>
+                            <textarea matInput placeholder="Enter the description" [(ngModel)]="toSubmit.child_description"></textarea>
+                        </mat-form-field>
+
+                            <mat-form-field>
+                                <mat-label>Choose a date</mat-label>
+                                <input matInput [(ngModel)]="date" [matDatepicker]="picker">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+
+                        <button mat-raised-button color="primary" (click)="sendData()"><i class="fas fa-save"></i> Save</button>
+                    </div>
+                    <br>                 
+                  </mat-expansion-panel>
+
+
+                <button class="delete" (click)="todoDelete(todoObj?.id, 'father')" mat-icon-button color="warn"><i class="fas fa-trash-alt"></i></button>
+            </mat-card-actions>
+        </mat-card>
+        <div *ngIf="todoObj?.childitem_set" class="childContainer">
+            <div *ngFor="let child of todoObj?.childitem_set" class="subTodos">
+                <h4>{{child?.child_title}}</h4>
+                <p>{{child?.child_description}}</p>
+                <p>Due: {{child?.child_due_date}}</p>
+                <button class="delete" (click)="todoDelete(child.id, 'child')" mat-icon-button color="warn"><i class="fas fa-trash-alt"></i></button>
+            </div>
+        </div>
+    </mat-card>
+</section>

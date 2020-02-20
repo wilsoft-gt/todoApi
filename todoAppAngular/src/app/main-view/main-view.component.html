@@ -1,3 +1,17 @@
-<ul>
-    <li *ngFor="let data of datos">{{ data.main_title }}</li>
-</ul>
+
+<section>
+    <mat-card>
+        <mat-card-title>
+            Todo's
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <a mat-raised-button color="primary" *ngFor="let data of datos" routerLink="detail/{{data.id}}">
+                <div class="linkContainer">
+                    <span>{{ data.main_title }}</span>
+                    <span class="taskDate">Created: {{ data.main_creation_date }} / Due: {{data.main_due_date}}</span>
+                </div>
+            </a>
+        </mat-card-content>
+    </mat-card>
+</section>

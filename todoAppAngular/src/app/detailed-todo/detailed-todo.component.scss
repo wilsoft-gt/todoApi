@@ -1,0 +1,69 @@
+@import "../../styles.scss";
+
+/* * {
+    border: 1px red dotted;
+} */
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 1em;
+    padding: 1em;
+    width: 75%;
+
+
+    h1, h2, h3 {
+        margin: 0;
+    }
+
+    .delete {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .main {
+        border-bottom: 1px darken($color5, 20%) solid;
+
+        .description {
+            margin: 0.5em 0;
+        }
+    
+        .dates {
+            margin: 0.2em;
+            font-size: small;
+        }
+
+
+
+
+    }
+
+    .childContainer {
+        float: right;
+        width: 100%;
+        .subTodos {
+            position: relative;
+            margin-top: 1.5em;
+            border-bottom: 1px darken($color5, 20%) solid;
+            width: 90%;
+            float: right;
+            h4 {
+                margin: 0;
+            }
+            p {
+                margin: 0.2em;
+            }
+        }
+    }
+
+    .formContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}

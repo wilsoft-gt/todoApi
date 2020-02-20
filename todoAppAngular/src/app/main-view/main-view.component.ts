@@ -22,8 +22,6 @@ export class MainViewComponent implements OnInit {
     try {
       const response = await this.mainViewService.get_data().toPromise();
       this.datos = response;
-      console.log(this.datos)
-      console.log(response)
     } catch(error) {
       this.datos = "No datos disponibles";
     }

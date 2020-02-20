@@ -1,8 +1,13 @@
+@import "../styles.scss";
+
 nav {
-    height: 2em;
-    background-color: #ccc;
+    height: 3em;
+    background-color: $color1;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    color: $color5;
+    font-size: 18px;
     p {
         margin: 0;
         padding: 0.3em 1em;
@@ -16,11 +21,16 @@ ul {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
     float: right;
+    
     li {
-        padding: 0.3em 1em;
+        
+        padding: 0.92em 1.5em;
         &:hover {
-            background-color: darken(#ccc, 10%);
+            background-color: lighten($color1, 10%);
+            border-bottom: 3px lighten($color1, 50%) solid;
+            cursor: pointer;
         }
     }
 }
